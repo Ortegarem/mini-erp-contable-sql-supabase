@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+
+<title>Mini ERP Contable</title>
+
+<style>
+
+/* Estilos Generales y Reset Moderno */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    margin: 40px;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.5;
+}
+
+/* Título Principal */
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 24px;
+    letter-spacing: -0.025em;
+}
+
+/* Botón Modernizado con Feedback Visual */
+button {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+    margin-bottom: 12px;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Contenedor del Dashboard */
+#dashboard {
+    margin-top: 24px;
+}
+
+/* Grid de Tarjetas */
+.cards {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+
+/* Tarjetas Estilo "SaaS Dashboard" */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    min-width: 240px;
+    flex: 1; /* Permite que crezcan proporcionalmente si hay espacio */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+/* Títulos dentro de las tarjetas (asumiendo que inyectas texto antes del valor) */
+.card {
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Valores Destacados */
+.valor {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 8px;
+    letter-spacing: -0.03em;
+}
+
+/* Tablas Contables Elegantes */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    margin-top: 32px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
+}
+
+th, td {
+    padding: 14px 20px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+td {
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    font-size: 0.95rem;
+}
+
+tr:last-child td {
+    border-bottom: none; /* Quita el borde a la última fila para respetar el border-radius */
+}
+
+tr:hover td {
+    background-color: #f8fafc; /* Efecto cebrado sutil al pasar el mouse */
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Mini ERP Contable</h1>
+
+<button onclick="loadDashboard()">
+Actualizar Dashboard
+</button>
+
+<div id="dashboard"></div>
+
+<script type="module" src="./app.js"></script>
+
+</body>
+
+</html>
